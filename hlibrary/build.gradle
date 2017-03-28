@@ -28,5 +28,6 @@ dependencies {
     })
     compile rootProject.ext.dependencies["appcompat-v7"]
     compile rootProject.ext.dependencies["recyclerview-v7"]
+    compile rootProject.ext.dependencies["statusbar-utils"]
     testCompile 'junit:junit:4.12'
 }
