@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -29,5 +31,9 @@ dependencies {
     compile rootProject.ext.dependencies["appcompat-v7"]
     compile rootProject.ext.dependencies["recyclerview-v7"]
     compile rootProject.ext.dependencies["statusbar-utils"]
+    compile rootProject.ext.dependencies["base-rv-helper"]
+    compile rootProject.ext.dependencies["picker-view"]
+    compile rootProject.ext.dependencies["butterknife"]
+    compile rootProject.ext.dependencies["eventbus"]
     testCompile 'junit:junit:4.12'
 }
