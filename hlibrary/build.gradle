@@ -35,5 +35,6 @@ dependencies {
     compile rootProject.ext.dependencies["picker-view"]
     compile rootProject.ext.dependencies["butterknife"]
     compile rootProject.ext.dependencies["eventbus"]
+    compile rootProject.ext.dependencies["gson"]
     testCompile 'junit:junit:4.12'
 }

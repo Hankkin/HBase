@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="mainArrays">
-        <item>时间组件</item>
+        <item>Picker组件</item>
+        <item>Loading组件</item>
     </string-array>
 </resources>

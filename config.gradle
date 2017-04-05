@@ -32,6 +32,6 @@ ext{
             "avi-loading"    : "com.wang.avi:library:1.0.2",
             "statusbar-utils": "com.jaeger.statusbaruitl:library:1.3.6",
             "base-rv-helper" : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.4",
-            "picker-view" : "com.contrarywind:Android-PickerView:3.2.2"
+            "picker-view" :    "com.contrarywind:Android-PickerView:3.2.2"
     ]
 }
