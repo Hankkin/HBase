@@ -43,6 +43,9 @@ public class MainActivity extends HBaseParentAcitvity {
                     case 0:
                         gotoActivity(PickerViewActivity.class);
                         break;
+                    case 1:
+                        showProgress();
+                        break;
                     default:
                         break;
                 }
