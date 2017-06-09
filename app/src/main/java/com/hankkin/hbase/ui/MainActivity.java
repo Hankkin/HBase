@@ -1,4 +1,4 @@
-package com.hankkin.hbase;
+package com.hankkin.hbase.ui;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,14 +7,15 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
-import com.hankkin.xlibrary.base.HBaseParentAcitvity;
+import com.hankkin.hbase.R;
+import com.hankkin.hbase.adapter.HomeAdapter;
+import com.hankkin.xlibrary.base.BaseAcitvity;
 
 import java.util.Arrays;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class MainActivity extends HBaseParentAcitvity {
+public class MainActivity extends BaseAcitvity {
 
     @BindView(R.id.rv_main) RecyclerView rv;
 
@@ -25,7 +26,6 @@ public class MainActivity extends HBaseParentAcitvity {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-        ButterKnife.bind(this);
     }
 
     @Override
@@ -45,6 +45,9 @@ public class MainActivity extends HBaseParentAcitvity {
                         break;
                     case 1:
                         showProgress();
+                        break;
+                    case 2:
+                        gotoActivity(CommonDialogActivity.class);
                         break;
                     default:
                         break;

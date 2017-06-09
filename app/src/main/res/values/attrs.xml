@@ -3,5 +3,13 @@
     <string-array name="mainArrays">
         <item>Picker组件</item>
         <item>Loading组件</item>
+        <item>统一Dialog</item>
+    </string-array>
+
+    <string-array name="dialog_list">
+        <item>item1</item>
+        <item>item2</item>
+        <item>item3</item>
+        <item>item4</item>
     </string-array>
 </resources>

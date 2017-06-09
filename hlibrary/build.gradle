@@ -36,5 +36,8 @@ dependencies {
     compile rootProject.ext.dependencies["butterknife"]
     compile rootProject.ext.dependencies["eventbus"]
     compile rootProject.ext.dependencies["gson"]
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.8@aar') {
+        transitive = true
+    }
     testCompile 'junit:junit:4.12'
 }

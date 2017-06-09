@@ -5,9 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.hankkin.xlibrary.R;
 import com.hankkin.xlibrary.event.EventMap;
 import com.hankkin.xlibrary.mvp.IBaseView;
 import com.hankkin.xlibrary.utils.ToastUtils;
@@ -23,7 +27,7 @@ import butterknife.ButterKnife;
  * Created by hankkin on 2017/3/31.
  */
 
-public abstract class HBaseParentAcitvity extends AppCompatActivity implements IBaseView {
+public abstract class BaseAcitvity extends AppCompatActivity implements IBaseView {
 
 
     protected Activity activity;
@@ -33,13 +37,11 @@ public abstract class HBaseParentAcitvity extends AppCompatActivity implements I
     protected View sysErrStubView;
 
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = this;
-        if (getLayoutId() != 0){
+        if (getLayoutId() != 0) {
             setContentView(getLayoutId());
         }
         initBind();
@@ -47,11 +49,11 @@ public abstract class HBaseParentAcitvity extends AppCompatActivity implements I
         initData();
     }
 
-    protected void initBind(){
+    protected void initBind() {
         ButterKnife.bind(activity);
     }
 
-    protected int getLayoutId(){
+    protected int getLayoutId() {
         return 0;
     }
 
@@ -83,7 +85,7 @@ public abstract class HBaseParentAcitvity extends AppCompatActivity implements I
 
     @Override
     public void showProgress() {
-        if (progress == null){
+        if (progress == null) {
             progress = new ProgressDialog(activity);
         }
         progress.show();
@@ -91,7 +93,7 @@ public abstract class HBaseParentAcitvity extends AppCompatActivity implements I
 
     @Override
     public void hideProgress() {
-        if (progress != null && progress.isShowing()){
+        if (progress != null && progress.isShowing()) {
             progress.hide();
         }
     }
@@ -141,15 +143,15 @@ public abstract class HBaseParentAcitvity extends AppCompatActivity implements I
     protected void onDestroy() {
         super.onDestroy();
 
-        if (hasBus){
+        if (hasBus) {
             EventBus.getDefault().unregister(this);
         }
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEventMainThread(EventMap.BaseEvent event){
-        if (event != null && event instanceof EventMap.HExceptionEvent){
-            if (!TextUtils.isEmpty(event.message)){
+    public void onEventMainThread(EventMap.BaseEvent event) {
+        if (event != null && event instanceof EventMap.HExceptionEvent) {
+            if (!TextUtils.isEmpty(event.message)) {
                 ToastUtils.showShortToast(event.message);
             }
         }
@@ -164,5 +166,82 @@ public abstract class HBaseParentAcitvity extends AppCompatActivity implements I
         this.hasBus = hasBus;
         if (hasBus)
             EventBus.getDefault().register(this);
+    }
+
+
+
+    public interface OnRightClickListener {
+        void rightClick();
+    }
+
+    protected Toolbar initToolBar(String title) {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setToolBar(title, toolbar);
+        return toolbar;
+    }
+
+    /**
+     * 统一初始化titlebar右侧文字
+     * @param title
+     * @return
+     */
+    protected Toolbar initToolBarRightTxt(String title, String right, final OnRightClickListener listener) {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setToolBar(title,toolbar);
+        TextView tvRight = (TextView) findViewById(R.id.tv_tool_bar_right);
+        tvRight.setText(right);
+        tvRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.rightClick();
+            }
+        });
+        return toolbar;
+    }
+
+    /**
+     * 统一初始化titlebar右侧图片
+     * @param title
+     * @return
+     */
+    protected Toolbar initToolBarRightImg(String title, int rightId, int visiable,final OnRightClickListener listener) {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setToolBar(title,toolbar);
+        ImageView ivRight = (ImageView) findViewById(R.id.iv_tool_bar_right);
+        ivRight.setImageResource(rightId);
+        ivRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.rightClick();
+            }
+        });
+        ivRight.setVisibility(visiable);
+        return toolbar;
+    }
+
+    /**
+     * 统一设置标题栏
+     * @param title
+     * @param toolbar
+     */
+    private void setToolBar(String title, Toolbar toolbar) {
+        ImageView ivBack = (ImageView) findViewById(R.id.tool_bar_back);
+        TextView tvTitle = (TextView) findViewById(R.id.tv_toolbar_title);
+        tvTitle.setText(title);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        toolbar.setContentInsetsRelative(10, 0);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back();
+            }
+        });
+    }
+
+    protected void back() {
+        if (activity != null) {
+            activity.finish();
+        }
     }
 }

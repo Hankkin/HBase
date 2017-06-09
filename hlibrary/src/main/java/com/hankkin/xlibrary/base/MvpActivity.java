@@ -10,7 +10,7 @@ import com.hankkin.xlibrary.mvp.IBaseView;
  * Created by hankkin on 2017/3/29.
  */
 
-public abstract class HBaseActivity<V extends IBaseView,P extends BasePresent<V>> extends HBaseParentAcitvity {
+public abstract class MvpActivity<V extends IBaseView,P extends BasePresent<V>> extends BaseAcitvity {
 
     protected P presenter;
 

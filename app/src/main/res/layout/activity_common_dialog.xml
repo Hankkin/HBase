@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hankkin.hbase.ui.CommonDialogActivity">
+
+    <include layout="@layout/layout_title_bar"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            style="@style/black_text"
+            android:text="@string/dialog_basic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_basic_no_title"
+            android:text="@string/dialog_basic_no_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_basic"
+            android:text="@string/dialog_basic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_basic_icon"
+            android:text="@string/dialog_basic_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            style="@style/black_text"
+            android:text="@string/basic_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_basic_list_no_title"
+            android:text="@string/basic_list_no_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_basic_list"
+            android:text="@string/basic_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_choice"
+            android:text="@string/single_choice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <Button
+            android:id="@+id/btn_input"
+            android:text="@string/input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_progress"
+            android:text="@string/progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

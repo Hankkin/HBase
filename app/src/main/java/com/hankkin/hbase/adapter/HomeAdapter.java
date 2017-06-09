@@ -1,7 +1,8 @@
-package com.hankkin.hbase;
+package com.hankkin.hbase.adapter;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.hankkin.hbase.R;
 
 import java.util.List;
 

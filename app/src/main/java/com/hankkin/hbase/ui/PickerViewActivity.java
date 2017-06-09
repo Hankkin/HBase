@@ -1,4 +1,4 @@
-package com.hankkin.hbase;
+package com.hankkin.hbase.ui;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,7 +7,8 @@ import android.widget.Button;
 
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.bigkoo.pickerview.TimePickerView;
-import com.hankkin.xlibrary.base.HBaseParentAcitvity;
+import com.hankkin.hbase.R;
+import com.hankkin.xlibrary.base.BaseAcitvity;
 import com.hankkin.xlibrary.bean.JsonBean;
 import com.hankkin.xlibrary.other.PickerManager;
 
@@ -19,7 +20,7 @@ import java.util.Date;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class PickerViewActivity extends HBaseParentAcitvity {
+public class PickerViewActivity extends BaseAcitvity {
 
 
     @BindView(R.id.btn_picker_time)
@@ -40,6 +41,7 @@ public class PickerViewActivity extends HBaseParentAcitvity {
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
+        initToolBar("PICKER组件");
         initTimePicker();
     }
 
