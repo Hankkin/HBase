@@ -4,6 +4,9 @@
         <item>Picker组件</item>
         <item>Loading组件</item>
         <item>统一Dialog</item>
+        <item>选择图片</item>
+        <item>消息Pop</item>
+        <item>RV+SwipeRefresh</item>
     </string-array>
 
     <string-array name="dialog_list">

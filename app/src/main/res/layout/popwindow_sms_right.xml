@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/transparent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_20"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_4"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/bg_sms_right"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_sms_pop_group_chat"
+                android:drawablePadding="@dimen/dp_8"
+                style="@style/white_small"
+                android:text="item1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_marginBottom="@dimen/dp_6"
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_sms_pop_add_friend"
+                android:drawablePadding="@dimen/dp_8"
+                style="@style/white_small"
+                android:text="item2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_marginBottom="@dimen/dp_6"
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_sms_pop_scan"
+                android:drawablePadding="@dimen/dp_8"
+                style="@style/white_small"
+                android:text="item3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_marginBottom="@dimen/dp_6"
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_sms_pop_share"
+                android:drawablePadding="@dimen/dp_8"
+                style="@style/white_small"
+                android:text="item4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

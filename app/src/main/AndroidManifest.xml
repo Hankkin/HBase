@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.hankkin.hbase">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:name=".HApplication"
         android:allowBackup="true"
@@ -19,7 +23,11 @@
         </activity>
         <activity android:name=".ui.CommonDialogActivity">
         </activity>
-        <activity android:name="com.hankkin.hbase.ui.PickerViewActivity"/>
+        <activity android:name=".ui.PickerViewActivity"/>
+        <activity android:name=".ui.SmsActivity">
+        </activity>
+        <activity android:name=".ui.RVActivity">
+        </activity>
     </application>
 
 </manifest>

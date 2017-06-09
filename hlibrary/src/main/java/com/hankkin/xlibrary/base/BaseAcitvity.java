@@ -2,8 +2,10 @@ package com.hankkin.xlibrary.base;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -204,7 +206,7 @@ public abstract class BaseAcitvity extends AppCompatActivity implements IBaseVie
      * @param title
      * @return
      */
-    protected Toolbar initToolBarRightImg(String title, int rightId, int visiable,final OnRightClickListener listener) {
+    protected Toolbar initToolBarRightImg(String title, int rightId,final OnRightClickListener listener) {
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setToolBar(title,toolbar);
         ImageView ivRight = (ImageView) findViewById(R.id.iv_tool_bar_right);
@@ -215,7 +217,6 @@ public abstract class BaseAcitvity extends AppCompatActivity implements IBaseVie
                 listener.rightClick();
             }
         });
-        ivRight.setVisibility(visiable);
         return toolbar;
     }
 
@@ -237,6 +238,12 @@ public abstract class BaseAcitvity extends AppCompatActivity implements IBaseVie
                 back();
             }
         });
+    }
+
+    protected void initSwipe(SwipeRefreshLayout refreshLayout, SwipeRefreshLayout.OnRefreshListener listener){
+        refreshLayout.setOnRefreshListener(listener);
+        refreshLayout.setColorSchemeColors(Color.rgb(88, 79, 96));
+        refreshLayout.setRefreshing(true);
     }
 
     protected void back() {

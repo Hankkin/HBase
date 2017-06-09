@@ -37,4 +37,9 @@
         <item name="android:textSize">@dimen/sp_15</item>
     </style>
 
+    <style name="AnimTools" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_in</item>
+        <item name="android:windowExitAnimation">@anim/push_out</item>
+    </style>
+
 </resources>

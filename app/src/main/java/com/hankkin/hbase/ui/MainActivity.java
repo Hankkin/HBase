@@ -10,8 +10,11 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.hankkin.hbase.R;
 import com.hankkin.hbase.adapter.HomeAdapter;
 import com.hankkin.xlibrary.base.BaseAcitvity;
+import com.luck.picture.lib.model.PictureConfig;
+import com.yalantis.ucrop.entity.LocalMedia;
 
 import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -49,11 +52,38 @@ public class MainActivity extends BaseAcitvity {
                     case 2:
                         gotoActivity(CommonDialogActivity.class);
                         break;
+                    case 3:
+                        selectImg();
+                        break;
+                    case 4:
+                        gotoActivity(SmsActivity.class);
+                        break;
+                    case 5:
+                        gotoActivity(RVActivity.class);
+                        break;
                     default:
                         break;
                 }
             }
         });
+    }
+
+    private void selectImg(){
+        PictureConfig.getInstance()
+                .openPhoto(this, new PictureConfig.OnSelectResultCallback() {
+                    @Override
+                    public void onSelectSuccess(List<LocalMedia> list) {
+                        if (list != null){
+                        }
+                    }
+
+                    @Override
+                    public void onSelectSuccess(LocalMedia localMedia) {
+                        if (localMedia != null){
+                            toast(localMedia.getPath());
+                        }
+                    }
+                });
     }
 
 }

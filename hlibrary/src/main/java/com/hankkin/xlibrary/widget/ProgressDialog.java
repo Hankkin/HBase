@@ -15,6 +15,8 @@ import butterknife.ButterKnife;
 public class ProgressDialog extends Dialog {
     private Context context;
 
+
+
     public ProgressDialog(Context context) {
         super(context, R.style.progress);
         this.context = context;
