@@ -1,6 +1,8 @@
 package com.hankkin.hbase.ui;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.InputType;
@@ -139,6 +141,13 @@ public class CommonDialogActivity extends BaseAcitvity {
                     }
                 })
                 .show();
+    }
+
+    @OnClick(R.id.btn_more)
+    public void goMore(){
+        Uri uri = Uri.parse("https://github.com/afollestad/material-dialogs");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 
 
