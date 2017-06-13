@@ -4,13 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.hankkin.xlibrary.mvp.BasePresent;
-import com.hankkin.xlibrary.mvp.IBaseView;
 
 /**
  * Created by hankkin on 2017/3/29.
  */
 
-public abstract class MvpActivity<V extends IBaseView,P extends BasePresent<V>> extends BaseAcitvity {
+public abstract class MvpActivity<V,P extends BasePresent<V>> extends BaseAcitvity {
 
     protected P presenter;
 
@@ -18,25 +17,21 @@ public abstract class MvpActivity<V extends IBaseView,P extends BasePresent<V>> 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        createPresenter();
-        presenter.attachView((V) this,activity);
+        presenter = initPresenter();
     }
 
-    protected abstract void createPresenter();
-
-
-    protected void setPresenter(P presenter){
-        this.presenter = presenter;
-    }
-
-    public P getPresenter() {
-        return presenter;
+    @Override
+    protected void onResume() {
+        super.onResume();
+        presenter.attach((V) this);
     }
 
     @Override
     protected void onDestroy() {
-        presenter.detachView();
+        presenter.detach();
 
         super.onDestroy();
     }
+
+    public abstract P initPresenter();
 }

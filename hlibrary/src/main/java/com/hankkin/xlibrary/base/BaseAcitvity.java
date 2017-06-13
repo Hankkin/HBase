@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.hankkin.xlibrary.R;
 import com.hankkin.xlibrary.event.EventMap;
-import com.hankkin.xlibrary.mvp.IBaseView;
+import com.hankkin.xlibrary.mvp.BaseView;
 import com.hankkin.xlibrary.utils.ToastUtils;
 import com.hankkin.xlibrary.widget.ProgressDialog;
 
@@ -29,7 +29,7 @@ import butterknife.ButterKnife;
  * Created by hankkin on 2017/3/31.
  */
 
-public abstract class BaseAcitvity extends AppCompatActivity implements IBaseView {
+public abstract class BaseAcitvity extends AppCompatActivity implements BaseView {
 
 
     protected Activity activity;

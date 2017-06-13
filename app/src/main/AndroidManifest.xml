@@ -28,6 +28,10 @@
         </activity>
         <activity android:name=".ui.RVActivity">
         </activity>
+        <activity android:name=".ui.MvpActivity">
+        </activity>
+        <activity android:name=".ui.MvpDemoActivity">
+        </activity>
     </application>
 
 </manifest>

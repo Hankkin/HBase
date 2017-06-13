@@ -6,7 +6,7 @@ import android.view.View;
  * Created by hankkin on 2017/3/29.
  */
 
-public interface IBaseView {
+public interface BaseView {
 
     /**
      * 显示loading框
