@@ -34,5 +34,6 @@ ext{
             "base-rv-helper" : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.15",
             "picker-view"    : "com.contrarywind:Android-PickerView:3.2.2",
             "pickerimg"      : "com.github.LuckSiege.PictureSelector:picture_library:v1.5.3",
+            "permission"     : "me.weyye.hipermission:library:1.0.6",
     ]
 }

@@ -15,7 +15,7 @@
         app:contentInsetStart="0dp"
         >
 
-        <ImageView
+        <com.hankkin.xlibrary.widget.ClickImageView
             android:src="@mipmap/back"
             android:id="@+id/tool_bar_back"
             android:paddingLeft="@dimen/dp_10"
