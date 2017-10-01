@@ -24,4 +24,7 @@
     <dimen name="sp_20">20sp</dimen>
     <dimen name="sp_22">22sp</dimen>
     <dimen name="sp_24">24sp</dimen>
+
+    <dimen name="lce_content_view_animation_translate_y">40dp</dimen>
+
 </resources>

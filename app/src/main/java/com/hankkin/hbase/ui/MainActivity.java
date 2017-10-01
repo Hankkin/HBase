@@ -10,6 +10,8 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.hankkin.hbase.R;
 import com.hankkin.hbase.adapter.HomeAdapter;
 import com.hankkin.xlibrary.base.BaseAcitvity;
+import com.hankkin.xlibrary.utils.ToastUtils;
+import com.hankkin.xlibrary.widget.view.HLoading;
 import com.luck.picture.lib.model.PictureConfig;
 import com.yalantis.ucrop.entity.LocalMedia;
 
@@ -47,7 +49,9 @@ public class MainActivity extends BaseAcitvity {
                         gotoActivity(PickerViewActivity.class);
                         break;
                     case 1:
-                        showProgress();
+//                        showProgress();
+                        HLoading loading = new HLoading(activity);
+                        loading.show();
                         break;
                     case 2:
                         gotoActivity(CommonDialogActivity.class);
@@ -80,7 +84,7 @@ public class MainActivity extends BaseAcitvity {
                     @Override
                     public void onSelectSuccess(LocalMedia localMedia) {
                         if (localMedia != null){
-                            toast(localMedia.getPath());
+                            ToastUtils.showShortToast(localMedia.getPath());
                         }
                     }
                 });

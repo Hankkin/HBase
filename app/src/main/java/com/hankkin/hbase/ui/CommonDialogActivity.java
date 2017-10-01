@@ -11,6 +11,7 @@ import android.view.View;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.hankkin.hbase.R;
 import com.hankkin.xlibrary.base.BaseAcitvity;
+import com.hankkin.xlibrary.utils.ToastUtils;
 
 import butterknife.OnClick;
 
@@ -69,7 +70,7 @@ public class CommonDialogActivity extends BaseAcitvity {
                 .itemsCallback(new MaterialDialog.ListCallback() {
                     @Override
                     public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
-                        toast(text);
+                        ToastUtils.showShortToast(text);
                     }
                 }).show();
     }
@@ -82,7 +83,7 @@ public class CommonDialogActivity extends BaseAcitvity {
                 .itemsCallback(new MaterialDialog.ListCallback() {
                     @Override
                     public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
-                        toast(text);
+                        ToastUtils.showShortToast(text);
                     }
                 }).show();
     }
@@ -95,7 +96,7 @@ public class CommonDialogActivity extends BaseAcitvity {
                 .itemsCallbackSingleChoice(0, new MaterialDialog.ListCallbackSingleChoice() {
                     @Override
                     public boolean onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
-                        toast(text);
+                        ToastUtils.showShortToast(text);
                         return true;
                     }
                 }).positiveText(R.string.OK)
@@ -115,7 +116,7 @@ public class CommonDialogActivity extends BaseAcitvity {
                 .input("", "", false, new MaterialDialog.InputCallback() {
                     @Override
                     public void onInput(@NonNull MaterialDialog dialog, CharSequence input) {
-                        toast(input);
+                        ToastUtils.showShortToast(input);
                     }
                 }).show();
     }

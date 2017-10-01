@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.hankkin.xlibrary.R;
 import com.hankkin.xlibrary.event.EventMap;
-import com.hankkin.xlibrary.mvp.BaseView;
+import com.hankkin.xlibrary.mvp.base.MvpView;
 import com.hankkin.xlibrary.utils.ToastUtils;
 import com.hankkin.xlibrary.widget.ProgressDialog;
 
@@ -29,7 +29,7 @@ import butterknife.ButterKnife;
  * Created by hankkin on 2017/3/31.
  */
 
-public abstract class BaseAcitvity extends AppCompatActivity implements BaseView {
+public abstract class BaseAcitvity extends AppCompatActivity implements MvpView {
 
 
     protected Activity activity;
@@ -85,7 +85,6 @@ public abstract class BaseAcitvity extends AppCompatActivity implements BaseView
     }
 
 
-    @Override
     public void showProgress() {
         if (progress == null) {
             progress = new ProgressDialog(activity);
@@ -93,53 +92,12 @@ public abstract class BaseAcitvity extends AppCompatActivity implements BaseView
         progress.show();
     }
 
-    @Override
     public void hideProgress() {
         if (progress != null && progress.isShowing()) {
             progress.hide();
         }
     }
 
-    @Override
-    public void toast(CharSequence s) {
-        ToastUtils.showShortToast(s);
-    }
-
-    @Override
-    public void toast(int id) {
-        ToastUtils.showShortToast(id);
-    }
-
-    @Override
-    public void toastLong(CharSequence s) {
-        ToastUtils.showLongToast(s);
-    }
-
-    @Override
-    public void toastLong(int id) {
-        ToastUtils.showLongToast(id);
-    }
-
-
-    @Override
-    public void showNullLayout() {
-
-    }
-
-    @Override
-    public void hideNullLayout() {
-
-    }
-
-    @Override
-    public void showErrorLayout(View.OnClickListener listener) {
-
-    }
-
-    @Override
-    public void hideErrorLayout() {
-
-    }
 
     @Override
     protected void onDestroy() {

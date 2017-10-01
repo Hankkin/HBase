@@ -7,4 +7,5 @@
     <color name="colorPrimary">#584F60</color>
     <color name="colorPrimaryDark">#584F60</color>
     <color name="white">#FFFFFF</color>
+    <color name="blue">#33ccff</color>
 </resources>

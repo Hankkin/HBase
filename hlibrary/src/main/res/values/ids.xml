@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <item name="loadingView" type="id"/>
+    <item name="contentView" type="id"/>
+    <item name="errorView" type="id"/>
+    <item name="rootView" type="id"/>
+    <item name="refreshView" type="id"/>
+    <item name="recyclerView" type="id"/>
+    
+</resources>
