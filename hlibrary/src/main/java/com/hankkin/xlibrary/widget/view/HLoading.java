@@ -20,10 +20,12 @@ public class HLoading extends Dialog {
 
     private Context context;
     AVLoadingIndicatorView avi;
+    private int color;
 
-    public HLoading(@NonNull Context context) {
+    public HLoading(@NonNull Context context,int color) {
         super(context, R.style.progress);
         this.context = context;
+        this.color = color;
         init();
     }
 
@@ -35,6 +37,7 @@ public class HLoading extends Dialog {
         avi = (AVLoadingIndicatorView) findViewById(R.id.avi);
         //设置SelectPicPopupWindow弹出窗体的背景
         getWindow().setBackgroundDrawableResource(R.color.transparent);
+        avi.setIndicatorColor(color);
 
         avi.setIndicator("BallSpinFadeLoaderIndicator");
     }

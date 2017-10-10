@@ -43,7 +43,6 @@ dependencies {
     compile rootProject.ext.dependencies["eventbus"]
     compile rootProject.ext.dependencies["gson"]
     compile rootProject.ext.dependencies["pickerimg"]
-    compile rootProject.ext.dependencies["novate"]
     compile('com.github.afollestad.material-dialogs:core:0.8.5.8@aar') {
         transitive = true
     }

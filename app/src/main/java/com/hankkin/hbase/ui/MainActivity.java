@@ -50,7 +50,7 @@ public class MainActivity extends BaseAcitvity {
                         break;
                     case 1:
 //                        showProgress();
-                        HLoading loading = new HLoading(activity);
+                        HLoading loading = new HLoading(activity,R.color.green_70);
                         loading.show();
                         break;
                     case 2:

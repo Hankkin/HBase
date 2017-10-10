@@ -6,7 +6,6 @@
     >
 
     <LinearLayout
-        android:background="@drawable/progress_bg"
         android:id="@+id/contentDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
